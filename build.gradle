@@ -1,0 +1,68 @@
+println "-------------------------------------------------"
+println "Build ResideMenu with:\n\tbuildToolsVersion = " + System.properties['buildToolsVersion']
+println "\tandroidGradlePluginVersion = " + System.properties['androidGradlePluginVersion']
+println "\tfile.encoding = " + System.properties['file.encoding']
+println "\tCharset.defaultCharset() = " + java.nio.charset.Charset.defaultCharset().toString()
+println "-------------------------------------------------\n"
+
+
+ext {
+    compileSdkVersion = 28
+   // buildToolsVersion = System.properties['buildToolsVersion']
+    minSdkVersion = 19
+    targetSdkVersion = 14
+}
+
+buildscript {
+    repositories {
+        jcenter()
+        google()
+        maven {
+            url "https://maven.google.com"
+        }
+        maven { url "https://jitpack.io" }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'org.robolectric:robolectric-gradle-plugin:1.1.0'
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+    }
+}
+
+allprojects {
+    tasks.withType(JavaCompile) {
+        options.encoding = "UTF-8"
+    }
+    repositories {
+        jcenter()
+        google()
+        maven { url 'https://maven.google.com' }
+        maven { url 'https://jitpack.io' }
+    }
+
+
+
+
+
+repositories {
+    jcenter()
+    google()
+    maven {
+        url "https://maven.google.com"
+    }
+    maven { url "https://jitpack.io" }
+}
+    ext {
+    compileSdkVersion = 28
+    minSdkVersion = 19
+    targetSdkVersion = 19
+    versionCode = 21
+
+    buildToolsVersion = "28.0.3"
+    supportLibraryVersion = "28.0.0"
+    versionName = "3.0.12"
+
+}
+}

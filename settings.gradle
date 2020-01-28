@@ -1,0 +1,4 @@
+include ':ResideMenu', ':ResideMenuDemo' , ':library' , ':material-intro-screen' , ':aboutpage' , ':nonetworklibrary' ,':paystack'
+
+//override your build tools version in gradle.properties
+
